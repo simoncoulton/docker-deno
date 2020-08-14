@@ -1,0 +1,17 @@
+version: "3.8"
+
+networks:
+  deno:
+
+services:
+  deno:
+    image: simoncoulton/deno:alpine-latest
+    volumes:
+      - ./:/app
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
+    command: run --allow-net /app/mod.ts
+    networks:
+      - deno

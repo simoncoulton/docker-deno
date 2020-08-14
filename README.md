@@ -6,35 +6,20 @@ A simple Docker container for Deno 🦕
 
 Dockerfile
 
-```
-FROM simoncoulton/deno:alpine-1.2.3
-
-EXPOSE 80
+```Dockerfile
+FROM simoncoulton/deno:alpine-latest
 
 CMD ["run", "mod.ts"]
 ```
 
 docker-compose.yml
 
-```
+```yaml
 version: "3.8"
-
-networks:
-  deno:
 
 services:
   deno:
-    image: simoncoulton/deno:alpine-1.2.3
-    container_name: deno
-    volumes:
-      - ./:/app
-    expose:
-      - 8000
-    ports:
-      - 8000:8000
-    command: run --allow-net /app/mod.ts
-    networks:
-      - deno
+    image: simoncoulton/deno:alpine-latest
 ```
 
 For more details see the example container in `example/`
