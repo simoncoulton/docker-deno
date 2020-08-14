@@ -1,0 +1,3 @@
+!bin/entrypoint
+!bin/install_deno
+example

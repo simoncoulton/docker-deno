@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# DENO_VERSION_OUTPUT=$(shell deno --version)
+# IFS=' '
+# DENO_VERSION=$(read -a denoversion <<< "DENO_VERSION_OUTPUT")
+# echo $DENO_VERSION
+
+case "$1" in
+    bundle | cache | doc | fmt | help | info | link | repl | run | test | types )
+    echo Starting Deno 🦕
+    exec deno "$@";;
+esac
+
+exec "$@"
